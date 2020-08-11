@@ -1,0 +1,9 @@
+<cu-custom id="m-navbar" bgColor="bg-gradual-blue" isBack="{{true}}" >
+  <view slot="content">朋友圈二维码</view>
+</cu-custom>
+<view class="image-container">
+  <image src="{{src}}" mode="widthFix"></image>
+</view>
+<view class="padding-xl">
+  <button class="cu-btn block bg-blue margin-tb-sm lg" bindtap="checkAuth">保存到相册</button>
+</view>

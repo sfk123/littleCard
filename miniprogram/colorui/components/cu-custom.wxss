@@ -1,0 +1,16 @@
+.cu-custom .cu-bar .current-city:before{
+  background-color: transparent;
+}
+.arrow-down{
+  flex: auto !important;
+}
+.city{
+  font-size: 26rpx !important;
+  /* flex-grow: 0; */
+  flex: auto !important;
+  /* flex-grow: 2; */
+}
+.m-bar{
+  position: fixed;
+  z-index: 999;
+}

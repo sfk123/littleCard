@@ -1,0 +1,46 @@
+<cu-custom id="m-navbar" bgColor="bg-gradual-blue" isBack="{{false}}" selectCity="{{true}}" bind:select="selectCity" mBar="true">
+  <view slot="content">市井工匠</view>
+  <scroll-view slot="m-bar" scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+    <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{workerTypes}}"  wx:for-item="item" wx:key="id" bindtap="tabSelect" 
+    data-id="{{index}}">
+      {{item.name}}
+    </view>
+  </scroll-view>  
+</cu-custom>
+<view wx:if="{{workerList.length==0}}" class="empty-continer">
+  <text>暂无数据！</text>
+</view>
+<view wx:if="{{workerList.length>0}}" class="list-container">
+  <view class="flex-container" wx:for="{{dataRow}}" wx:for-item="row" wx:key="index">
+    <view class="card-container solid-bottom" data-index="{{row*2}}" bindtap="workerDetail">
+      <view class="image-container">
+        <image src="{{workerList[row*2].photo}}" mode="widthFix"></image>
+        <text class="district bg-blue text-sm">{{workerList[row*2].region.value[2]}}</text>
+        <text class="cuIcon-attention">{{' '+workerList[row*2].view}}</text>
+      </view>
+      
+      <view class="name-continer">
+        <text class="name text-xl">{{workerList[row*2].name}}</text>
+        <text class="anli">{{workerList[row*2].caseCount}}案例</text>
+      </view>
+    </view>
+    <view class="card-container solid-bottom" wx:if="{{(row*2+1)<workerList.length}}" data-index="{{row*2+1}}" bindtap="workerDetail">
+      <view class="image-container">
+        <image src="{{workerList[row*2+1].photo}}" mode="widthFix"></image>
+        <text class="district bg-blue text-sm">{{workerList[row*2+1].region.value[2]}}</text>
+        <text class="cuIcon-attention">{{' '+workerList[row*2+1].view}}</text>
+      </view>
+      <view class="name-continer">
+        <text class="name text-xl">{{workerList[row*2+1].name}}</text>
+        <text class="anli">{{workerList[row*2+1].caseCount}}案例</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>
+

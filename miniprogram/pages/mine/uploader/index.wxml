@@ -1,0 +1,13 @@
+<cu-custom id="m-navbar" bgColor="bg-gradual-blue" isBack="{{true}}" >
+  <view slot="content">图片裁剪</view>
+</cu-custom>
+<import src="../../../components/we-cropper/we-cropper.wxml"/>
+
+<view class="cropper-wrapper">
+  <view class="canvas-container">
+    <template is="we-cropper" data="{{...cropperOpt}}"/>
+  </view>
+  <view class="padding-xl">
+      <button class="cu-btn block bg-blue margin-tb-sm lg" bindtap="getCropperImage">保   存</button>
+  </view>
+</view>

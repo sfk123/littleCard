@@ -1,0 +1,24 @@
+<cu-custom id="m-navbar" bgColor="bg-gradual-blue" isBack="{{true}}" >
+  <view slot="content">{{title}}</view>
+</cu-custom>
+<form>
+	<view class="cu-form-group">
+		<view class="title">项目地址</view>
+		<text>{{case.region.value+' '+(case.address?case.address:'')}}</text>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">项目面积</view>
+		<text>{{case.area}}</text>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">项目周期</view>
+		<text>{{case.time}}</text>
+	</view>
+  	<view class="cu-form-group" wx:if="{{case.fee}}">
+		<view class="title">项目费用</view>
+		<text>{{case.fee}}</text>
+	</view>
+</form>
+<view class="image-container">
+  <image wx:for="{{case.images}}" wx:key="index" mode="widthFix" wx:for-item="item" src="{{item}}"></image>
+</view>

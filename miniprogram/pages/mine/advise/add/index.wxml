@@ -1,0 +1,16 @@
+<cu-custom id="m-navbar" bgColor="bg-gradual-blue" isBack="{{true}}" >
+  <view slot="content">发表意见或建议</view>
+</cu-custom>
+<form>
+  <view class="cu-form-group margin-top">
+		<textarea maxlength="-1" class="m-input" bindinput="textareaAInput" placeholder="让我们一起把平台发展的更好。。。"></textarea>
+	</view>
+</form>
+<view class="padding-xl" bindtap="submit">
+    <button class="cu-btn block bg-blue margin-tb-sm lg">提   交</button>
+</view>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../../../images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>请稍后...</view>
+</view>

@@ -1,0 +1,71 @@
+page{
+  display: flex;
+  flex-direction: column;
+  /* height: 100vh;
+  overflow-y: hidden; */
+}
+.empty-continer{
+  flex-grow: 1;
+  text-align: center;
+  align-items: center;
+  padding-top: 350rpx;
+}
+.list-container{
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.flex-container{
+  padding-right: 30rpx;
+  padding-left: 30rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+.card-container{
+  width: 47%;
+  border-right: 1rpx solid rgba(0,0,0,0.1);
+  border-left: 1rpx solid rgba(0,0,0,0.1);
+  border-radius: 10rpx;
+}
+.card-container image{
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+.image-container{
+  position: relative;
+}
+.image-container .cuIcon-attention{
+  position: absolute;
+  bottom: 8rpx;
+  left: 0;
+  color: white;
+  padding: 5rpx 10rpx;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top-right-radius: 10rpx;
+}
+.district{
+  position: absolute;
+  right: 0;
+  color: white;
+  border-top-right-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+  padding:5rpx 10rpx;
+}
+.name-continer{
+  /* padding: 20rpx auto; */
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.name-continer .name{
+  margin-left: 10rpx;
+}
+.name-continer .anli{
+  margin-right: 10rpx;
+}

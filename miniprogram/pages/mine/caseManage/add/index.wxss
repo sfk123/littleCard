@@ -1,0 +1,15 @@
+page{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: hidden;
+}
+.scroll-container{
+  flex-grow: 1;
+}
+.m-bottom{
+  padding-top: 0;
+}
+.test{
+  margin:30rpx;
+}

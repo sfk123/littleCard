@@ -1,0 +1,55 @@
+.worker-card-container{
+  width: 100vw;
+  display: flex;
+  padding: 20rpx;
+}
+.worker-card-container image{
+  flex-grow: 1;
+  border-radius: 10rpx;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
+}
+.btn-container{
+  justify-content: space-between;
+}
+.btn-container button{
+  width: 45%;
+}
+.case-container{
+  display: flex;
+  flex-direction: column;
+}
+.flex-container{
+  padding-right: 30rpx;
+  padding-left: 30rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+.card-container{
+  width: 47%;
+  border-right: 1rpx solid rgba(0,0,0,0.1);
+  border-left: 1rpx solid rgba(0,0,0,0.1);
+  border-radius: 10rpx;
+  background-color: white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+}
+.card-container image{
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height: 40vw;
+}
+.image-container .cuIcon-attention{
+  position: absolute;
+  bottom: 8rpx;
+  right: 0;
+  color: white;
+  padding: 5rpx 10rpx;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.image-container{
+  position: relative;
+}
+.name-continer{
+  padding: 10rpx;
+}

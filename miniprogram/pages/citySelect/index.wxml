@@ -1,0 +1,25 @@
+<cu-custom id="m-navbar" bgColor="bg-gradual-blue" isBack="{{true}}" bind:customBack="pageBack" customBack="{{true}}">
+  <view slot="backText">返回</view><view slot="content">选择城市</view>
+</cu-custom>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text> {{currentLocation.province+' '+currentLocation.city}}  <text class="text-grey text-sm ml-1">GPS定位</text>
+    </view>
+    <view class="action">
+      <image class="icon-location" src="../../images/dw.png"></image>
+    </view>
+</view>
+  <view class="cu-list menu sm-border">
+    <view class="cu-item arrow" wx:for="{{list}}" wx:for-item="item" wx:key="id">
+      <view class="content" data-id="{{item.id}}" bindtap="getChildren">
+        <text class="text-black" >{{item.fullname}}</text>
+      </view>
+    </view>
+    
+  </view>
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>

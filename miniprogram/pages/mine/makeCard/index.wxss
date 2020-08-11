@@ -1,0 +1,12 @@
+
+page{
+  overflow-x: scroll;
+}
+.card{
+  width: 100vw;
+}
+#myCanvas{
+  background-color: black;
+  position: absolute;
+  top: -10000px;
+}

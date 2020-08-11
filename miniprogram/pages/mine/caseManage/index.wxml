@@ -1,0 +1,46 @@
+<cu-custom id="m-navbar" bgColor="bg-gradual-blue" isBack="{{true}}" >
+  <view slot="content">案例管理</view>
+</cu-custom>
+<view class="scroll-container" style="{{listData.length==0?'display:flex':''}}">
+  <text class="empty-text" wx:if="{{listData.length==0}}">暂无数据！</text>
+  <scroll-view  wx:if="{{listData.length>0}}" class="m-scroll" scroll-y="{{true}}" style="height:{{scrollHeight}}px">
+    <view class="flex-container" wx:for="{{dataRow}}" wx:for-item="row" wx:key="index">
+      <view class="card-container solid-bottom">
+        <view class="image-container">
+          <image src="{{listData[row*2].images[0]}}" mode="aspectFill"></image>
+          <text class="cuIcon-attention">{{' '+listData[row*2].view}}</text>
+          <!-- <text class="district bg-blue text-sm">{{listData[row*2].time}}</text> -->
+          <text class="cuIcon-deletefill text-red" data-id="{{listData[row*2]._id}}" bindtap="deleteCase"></text>
+          <view class="name text-cut" style="width:{{imgWidth}}px">{{listData[row*2].name}}</view>
+        </view>
+        
+        <view class="btn-continer">
+          <button class="cu-btn round bg-green shadow sm" data-id="{{listData[row*2]._id}}" bindtap="viewCase">预  览</button>
+          <button class="cu-btn round bg-cyan shadow sm" data-id="{{listData[row*2]._id}}" bindtap="editCase">编  辑</button>
+        </view>
+      </view>
+      <view class="card-container solid-bottom" wx:if="{{(row*2+1)<listData.length}}">
+        <view class="image-container">
+          <image src="{{listData[row*2+1].images[0]}}" mode="aspectFill"></image>
+          <text class="cuIcon-attention">{{' '+listData[row*2].view}}</text>
+          <!-- <text class="district bg-blue text-sm">{{listData[row*2+1].time}}</text> -->
+          <text class="cuIcon-deletefill text-red" data-id="{{listData[row*2+1]._id}}" bindtap="deleteCase"></text>
+          <view class="name text-cut" style="width:{{imgWidth}}px">{{listData[row*2+1].name}}</view>
+        </view>
+        <view class="btn-continer">
+          <button class="cu-btn round bg-green shadow sm" data-id="{{listData[row*2+1]._id}}" bindtap="viewCase">预  览</button>
+          <button class="cu-btn round bg-cyan shadow sm" data-id="{{listData[row*2+1]._id}}" bindtap="editCase">编  辑</button>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="m-bottom padding flex flex-direction">
+  <button class="cu-btn bg-blue margin-tb-sm lg" bindtap="addCase">新增案例</button>
+</view>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../../images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>{{loadText}}</view>
+</view>

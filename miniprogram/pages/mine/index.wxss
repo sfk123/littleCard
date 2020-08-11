@@ -1,0 +1,44 @@
+.info-container{
+  display: flex;
+  background-color: var(--white);
+  align-items: center;
+}
+.info-container .info{
+  flex-grow: 1;
+  color: #888;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.icon-right{
+  width: 100rpx;
+  height: 100rpx;
+  margin: auto;
+}
+.icon-right-small{
+  width: 80rpx;
+  height: 80rpx;
+  margin: auto;
+}
+.userinfo-avatar{
+  overflow:hidden;  
+  display: block;  
+  width: 160rpx;  
+  height: 160rpx;  
+  margin:10rpx 20rpx;  
+  border-radius: 50%;  
+  border: 2px solid #fff;  
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+}
+.cu-list,.cu-btn{
+  margin-top: 20rpx;
+}
+.recard{
+  margin-right: 30rpx;
+}
+.card-image{
+  flex-grow: 1;
+  height: auto;
+  border-radius: 10rpx;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+}

@@ -1,0 +1,67 @@
+<cu-custom id="m-navbar" bgColor="bg-gradual-blue" isBack="{{true}}" >
+  <view slot="content">{{title}}</view>
+</cu-custom>
+<view class="scroll-container">
+  <scroll-view class="m-scroll" scroll-y="{{true}}" style="height:{{scrollHeight}}px">
+    <form class="margin-bottom">
+      <view class="cu-form-group">
+          <view class="title"><text class="text-red">*</text>项目名称</view>
+          <input placeholder="请输入项目名称"  bindinput="bindInput" data-type="name" value="{{formData.name}}"></input>
+      </view>
+      <view class="cu-form-group">
+          <view class="title"><text class="text-red">*</text>项目面积</view>
+          <input placeholder="请输入项目面积" bindinput="bindInput" data-type="area" value="{{formData.area}}"></input>
+      </view>
+      <view class="cu-form-group">
+          <view class="title"><text class="text-red">*</text>项目周期</view>
+          <input placeholder="请输入项目周期" bindinput="bindInput" data-type="time" value="{{formData.time}}"></input>
+      </view> 
+      <view class="cu-form-group">
+        <view class="title"><text class="text-red">*</text>所在地区</view>
+        <picker mode="region" bindchange="RegionChange" value="{{regionValue}}" custom-item="{{customItem}}">
+          <view class="picker">
+            {{regionValue.length==0?'请选择':(regionValue[0]+','+regionValue[1]+','+regionValue[2])}}
+          </view>
+        </picker>
+      </view> 
+      <view class="cu-form-group">
+          <view class="title">详细地址</view>
+          <input placeholder="请输入镇、县、村等信息" bindinput="bindInput" data-type="address" value="{{formData.address}}"></input>
+      </view>
+      <view class="cu-form-group">
+          <view class="title">项目费用</view>
+          <input placeholder="请输入项目费用" type="digit" bindinput="bindInput" data-type="fee" value="{{formData.fee}}"></input>
+      </view>
+  <view class="cu-bar bg-white margin-top">
+		<view class="action">
+			<text class="text-red">*</text>项目图片
+		</view>
+    <view class="action">
+			{{imgList.length}}/10
+		</view>
+	</view>
+  <view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<10}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>                      
+    </form>
+  </scroll-view>
+</view>
+
+<view class="m-bottom padding flex flex-direction">
+  <button class="cu-btn bg-blue margin-tb-sm lg" bindtap="addCase">保  存</button>
+</view>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../../../images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>{{loadText}}</view>
+</view>

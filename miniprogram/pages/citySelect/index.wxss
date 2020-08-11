@@ -1,0 +1,11 @@
+.page {
+  height: 100Vh;
+  width: 100vw;
+}
+.icon-location{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.ml-1{
+  margin-left: 1rem;
+}

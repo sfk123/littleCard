@@ -1,0 +1,92 @@
+<cu-custom id="m-navbar" bgColor="bg-gradual-blue" isBack="{{true}}" >
+  <view slot="content">意见与建议</view>
+</cu-custom>
+<scroll-view scroll-x class="bg-white nav text-center" scroll-with-animation="{{true}}" enable-back-to-top="{{true}}">
+  <view class="cu-item {{index==tabIndex?'text-blue cur':''}}" wx:for="{{tabs}}"  wx:for-item="item" wx:key="id" bindtap="tabSelect" data-index="{{index}}">
+    {{item.name}}
+  </view>
+</scroll-view>
+<view class="scroll-container {{adviseList.length==0?'text-center flex text-middle':''}}">
+  <text wx:if="{{adviseList.length==0}}">暂无数据</text>
+  <scroll-view  wx:if="{{adviseList.length>0}}" class="m-scroll" scroll-y="{{true}}" style="height:{{scrollHeight}}px">
+    <view class="cu-list menu-avatar comment solids-top" wx:if="{{tabIndex==0}}">
+      <view class="cu-item solid-bottom" wx:for="{{adviseList}}" wx:key="id"  wx:for-item="advise">
+        <view class="cu-avatar round" style="background-image:url({{advise.userInfo.avatarUrl}});"></view>
+        <view class="content">
+          <view class="title flex">
+            <view class="text-grey name">{{advise.userInfo.nickName}}</view>
+            <view class="text-grey text-sm time">{{advise.createTime}}</view>
+          </view>
+          
+          <view class="text-black text-content text-df">
+            {{advise.text}}
+          </view>
+          <view class="bg-grey padding-sm radius margin-top-sm  text-sm" wx:for="{{advise.comments}}" wx:key="index" wx:for-item="comment">
+            <view class="flex">
+              <view>{{comment.userInfo?comment.userInfo.nickName:'官方回复'}}：</view>
+              <view class="flex-sub">{{comment.value}}</view>
+            </view>
+          </view>
+          <view class="margin-top-sm flex justify-between">
+            <view class="text-gray text-df"></view>
+            <view>
+              <text class="cuIcon-appreciatefill {{advise.heart?'text-red':'text-gray'}}" data-id="{{advise._id}}" bindtap="clickHeart"></text>
+              <text class="cuIcon-messagefill text-gray margin-left-sm" data-id="{{advise._id}}" bindtap="showComment"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar comment solids-top" wx:if="{{tabIndex==1}}">
+      <view class="cu-item solid-bottom" wx:for="{{adviseList}}" wx:key="id"  wx:for-item="advise">
+        <view class="cu-avatar round" style="background-image:url({{advise.userInfo.avatarUrl}});"></view>
+        <view class="content">
+          <view class="title flex">
+            <view class="text-grey name">{{advise.userInfo.nickName}}</view>
+            <view class="text-grey text-sm time">{{advise.createTime}}</view>
+          </view>
+          
+          <view class="text-black text-content text-df">
+            {{advise.text}}
+          </view>
+          <view class="bg-grey padding-sm radius margin-top-sm  text-sm" wx:for="{{advise.comments}}" wx:key="index" wx:for-item="comment">
+            <view class="flex">
+              <view>{{comment.userInfo?comment.userInfo.nickName:'官方回复'}}：</view>
+              <view class="flex-sub">{{comment.value}}</view>
+            </view>
+          </view>
+          <view class="margin-top-sm flex justify-between">
+            <view class="text-gray text-df"></view>
+            <view>
+              <!-- <text class="cuIcon-appreciatefill {{advise.heart?'text-red':'text-gray'}}" data-id="{{advise._id}}" bindtap="clickHeart"></text> -->
+              <text class="cuIcon-messagefill text-gray margin-left-sm" data-id="{{advise._id}}" bindtap="showComment"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="cu-modal {{inputModal?'show':'hidden'}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">发表评论</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-xl">
+        <textarea class="text-left" bindinput="commentInput" placeholder="请输入评论内容..."></textarea>
+        <button class="cu-btn block bg-blue margin-tb-sm" bindtap="comment">提  交</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="padding-xl bottom-container" bindtap="addAdvise">
+    <button class="cu-btn block bg-blue margin-tb-sm lg">发表谏言</button>
+</view>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../../images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>请稍后...</view>
+</view>

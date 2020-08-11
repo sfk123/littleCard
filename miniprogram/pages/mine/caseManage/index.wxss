@@ -1,0 +1,82 @@
+page{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: hidden;
+}
+.scroll-container{
+  flex-grow: 1;
+  align-items: center;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.m-bottom{
+  padding-top: 0;
+}
+.empty-text{
+  margin: auto;
+}
+.flex-container{
+  padding-right: 30rpx;
+  padding-left: 30rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+.card-container{
+  width: 47%;
+  border-right: 1rpx solid rgba(0,0,0,0.1);
+  border-left: 1rpx solid rgba(0,0,0,0.1);
+  border-radius: 10rpx;
+  background-color: white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+}
+.card-container image{
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height: 40vw;
+}
+.image-container{
+  position: relative;
+}
+.image-container .name{
+  position: absolute;
+  bottom: 6rpx;
+  left: 0;
+  color: white;
+  padding: 10rpx;
+  background-color: rgba(0,0,0,0.5);
+}
+.image-container .cuIcon-attention{
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: white;
+  padding: 5rpx 10rpx;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 10rpx;
+}
+.image-container .cuIcon-deletefill{
+  position: absolute;
+  right: 0;
+  font-size: large;
+  background-color: rgba(0,0,0,0.5);
+  border-top-right-radius: 10rpx;
+  padding:3rpx 10rpx;
+}
+.district{
+  position: absolute;
+  left: 0;
+  color: white;
+  border-top-left-radius: 10rpx;
+  padding:3rpx 10rpx;
+}
+.btn-continer{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

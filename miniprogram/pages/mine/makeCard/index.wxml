@@ -1,0 +1,15 @@
+<cu-custom id="m-navbar" bgColor="bg-gradual-blue" isBack="{{true}}" >
+  <view slot="content">创建名片</view>
+</cu-custom>
+<image class="card" mode="aspectFit" src="{{cardImage}}" wx:if="cardImage"></image>
+
+<canvas type="2d" id="myCanvas" style="height:{{canvasHeight}}px;width:{{canvaswidth}}px"></canvas>  
+
+<view class="padding-xl">
+    <button class="cu-btn block bg-blue margin-tb-sm lg" bindtap="saveCard">保存</button>
+</view>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../../images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>{{loadText}}</view>
+</view>

@@ -1,0 +1,21 @@
+page{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.scroll-container{
+  flex-grow: 1;
+}
+.text-middle{
+  align-items: center;
+  justify-content: space-around;
+}
+.bottom-container{
+  padding-top: 0 !important;
+}
+.content .title .name{
+  flex-grow: 1;
+}
+.hidden{
+  display: none;
+}

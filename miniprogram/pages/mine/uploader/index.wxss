@@ -1,0 +1,8 @@
+.cropper-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+.canvas-container{
+  flex-grow: 1;
+}
+.padding-xl{padding-top: 0;}

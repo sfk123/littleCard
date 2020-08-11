@@ -1,0 +1,46 @@
+<cu-custom id="m-navbar" bgColor="bg-gradual-blue" isBack="{{isBack}}" isCustom="{{isCustom}}">
+  <view slot="content">{{title}}</view>
+</cu-custom>
+<view class="worker-card-container" >
+  <image src="{{worker.card}}" mode="widthFix"></image>
+</view>
+<view class="padding flex btn-container">
+  <button class="cu-btn bg-blue lg" bindtap="makePhoneCall"><text class="cuIcon-dianhua"></text>拨打电话</button>
+  <button class="cu-btn bg-orange lg" wx:if="{{worker.wx}}" bindtap="clipboard"><text class="cuIcon-copy"></text>复制微信号</button>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    案例列表：
+  </view>
+</view>
+<view class="bg-white case-container">
+  <view class="flex-container" wx:for="{{dataRow}}" wx:for-item="row" wx:key="index">
+      <view class="card-container solid-bottom" data-id="{{listData[row*2]._id}}" bindtap="openDetail">
+        <view class="image-container">
+          <image src="{{listData[row*2].images[0]}}" mode="aspectFill"></image>
+          <text class="cuIcon-attention">{{' '+listData[row*2].view}}</text>
+          <!-- <text class="district bg-blue text-sm">{{listData[row*2].time}}</text> -->
+        </view>
+        
+        <view class="name-continer text-cut">
+          {{listData[row*2].name}}
+        </view>
+      </view>
+      <view class="card-container solid-bottom" wx:if="{{(row*2+1)<listData.length}}" data-id="{{listData[row*2+1]._id}}" bindtap="openDetail">
+        <view class="image-container">
+          <image src="{{listData[row*2+1].images[0]}}" mode="aspectFill"></image>
+          <text class="cuIcon-attention">{{' '+listData[row*2+1].view}}</text>
+          <!-- <text class="district bg-blue text-sm">{{listData[row*2+1].time}}</text> -->
+        </view>
+        <view class="name-continer text-cut">
+          {{listData[row*2+1].name}}
+        </view>
+      </view>
+    </view>
+</view>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>{{loadText}}</view>
+</view>
+

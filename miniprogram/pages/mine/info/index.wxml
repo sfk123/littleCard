@@ -1,0 +1,80 @@
+<cu-custom id="m-navbar" bgColor="bg-gradual-blue" isBack="{{true}}" >
+  <view slot="content">资料设置</view>
+</cu-custom>
+<form>
+  <view class="cu-form-group margin-top">
+		<view class="title"><text class="text-red">*</text>姓名</view>
+		<input placeholder="请输入真实姓名" bindinput="bindInput" data-type="name" value="{{formData.name}}"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title"><text class="text-red">*</text>手机号码</view>
+		<input placeholder="请输入联系电话" type="number" bindinput="bindInput" data-type="phone" value="{{formData.phone}}"></input>
+		<view class="cu-capsule radius">
+			<view class="cu-tag bg-blue">
+				+86
+			</view>
+			<view class="cu-tag line-blue">
+				中国大陆
+			</view>
+		</view>
+	</view>
+  <view class="cu-form-group">
+		<view class="title"><text class="text-red">*</text>所在地区</view>
+		<picker mode="region" bindchange="RegionChange" value="{{regionValue}}" custom-item="{{customItem}}">
+			<view class="picker">
+				{{regionValue.length==0?'请选择':(regionValue[0]+','+regionValue[1]+','+regionValue[2])}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title"><text class="text-red">*</text>职业类别</view>
+		<picker bindchange="workerChange" value="{{workerIndex}}" range="{{workerTypes}}" range-key="name">
+			<view class="picker">
+				{{workerIndex!=-1?workerTypes[workerIndex].name:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">从业年限</view>
+		<input placeholder="请输入从业年限" type="number" bindinput="bindInput" data-type="worderAge" value="{{formData.worderAge}}"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">微信号</view>
+		<input placeholder="请输入微信号" bindinput="bindInput" data-type="wx" value="{{formData.wx}}"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">公司名称</view>
+		<input placeholder="请输入公司名称" bindinput="bindInput" data-type="company" value="{{formData.company}}"></input>
+	</view>
+  <view class="cu-form-group align-start">
+		<view class="title">简介</view>
+		<textarea maxlength="100"  bindinput="bindInput" data-type="introduce" value="{{formData.introduce}}" placeholder="请输入简短介绍"></textarea>
+	</view>
+  <view class="cu-bar bg-white margin-top">
+		<view class="action">
+			<text class="text-red">*</text>职业形象照
+		</view>
+	</view>
+  	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length==0}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+  <view class="padding-xl">
+    <button class="cu-btn block bg-blue margin-tb-sm lg" bindtap="saveData">保存</button>
+  </view>
+</form>
+<canvas type="2d" id="myCanvas" style="height:{{canvasHeight}}px;width:{{canvaswidth}}px"></canvas>  
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../../images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>{{loadText}}</view>
+</view>
