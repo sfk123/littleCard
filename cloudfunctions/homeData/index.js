@@ -39,10 +39,10 @@ exports.main = async (event, context) => {
     user_data=result.data[0]
   }
   const _ = db.command
-  result = await db.collection('worker_type').where({
-    _id:_.in(['38d78ca75edf623c0075e86f5960a620', '75777da85edf62480067c913384a4819'])
-  }).get()
-  // result = await db.collection('worker_type').get()
+  // result = await db.collection('worker_type').where({
+  //   _id:_.in(['38d78ca75edf623c0075e86f5960a620', '75777da85edf62480067c913384a4819'])
+  // }).get()
+  result = await db.collection('worker_type').get()
   return {
     workerTypes:result.data,
     userInfo:user_data
