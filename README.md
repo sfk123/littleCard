@@ -25,18 +25,18 @@
 ## 感谢 [weilanwl](https://github.com/weilanwl) 的开源 [ColorUI](https://github.com/weilanwl/ColorUI) 项目提供前端页面及框架支持
 
 ## 界面预览
-<img src="http://139.155.224.251:8000/1.jpg" alt="城市选择页面" style="max-width:100%;" width="500">
-<img src="http://139.155.224.251:8000/2.jpg" alt="首页" style="max-width:100%;" width="500">
-<img src="http://139.155.224.251:8000/3.png" alt="名片主页" style="max-width:100%;" width="500">
-<img src="http://139.155.224.251:8000/4.jpg" alt="案例展示页面" style="max-width:100%;" width="500">
-<img src="http://139.155.224.251:8000/5.png" alt="个人中心" style="max-width:100%;" width="500">
-<img src="http://139.155.224.251:8000/6.png" alt="资料编辑页面" style="max-width:100%;" width="500">
-<img src="http://139.155.224.251:8000/7.jpg" alt="案例管理页面" style="max-width:100%;" width="500">
-<img src="http://139.155.224.251:8000/8.jpg" alt="案例编辑页面" style="max-width:100%;" width="500">
-<img src="http://139.155.224.251:8000/9.jpg" alt="案例编辑页面" style="max-width:100%;" width="500">
+<img src="http://test-image.meiyuan.tech/git-image1.jpg" alt="城市选择页面" style="max-width:100%;" width="500">
+<img src="http://test-image.meiyuan.tech/git-image2.jpg" alt="首页" style="max-width:100%;" width="500">
+<img src="http://test-image.meiyuan.tech/git-image3.png" alt="名片主页" style="max-width:100%;" width="500">
+<img src="http://test-image.meiyuan.tech/git-image4.jpg" alt="案例展示页面" style="max-width:100%;" width="500">
+<img src="http://test-image.meiyuan.tech/git-image5.png" alt="个人中心" style="max-width:100%;" width="500">
+<img src="http://test-image.meiyuan.tech/git-image6.png" alt="资料编辑页面" style="max-width:100%;" width="500">
+<img src="http://test-image.meiyuan.tech/git-image7.jpg" alt="案例管理页面" style="max-width:100%;" width="500">
+<img src="http://test-image.meiyuan.tech/git-image8.jpg" alt="案例编辑页面" style="max-width:100%;" width="500">
+<img src="http://test-image.meiyuan.tech/git-image9.jpg" alt="案例编辑页面" style="max-width:100%;" width="500">
 
 ### 扫码体验
-<p align="center"><img src="http://139.155.224.251:8000/qr_code.jpg" alt="扫码体验" style="max-width:100%;" width="300"></p>
+<p align="center"><img src="http://test-image.meiyuan.tech/git-imageqr_code.jpg" alt="扫码体验" style="max-width:100%;" width="300"></p>
 
 ## 技术架构
 
